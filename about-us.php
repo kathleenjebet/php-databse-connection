@@ -2,7 +2,7 @@
 $server ="localhost";
 $username ="root";
 $password ="";
-$database ="zalego";
+$database ="web2";
 
 $conn =mysqli_connect($server,$username,$password,$database);
 if (isset ( $_POST['submitbutton']))
@@ -69,7 +69,7 @@ if (isset ( $_POST['submitbutton']))
                 </p>
             </div>
             <div class="col-lg-6">
-                <img src="/images/jess-bailey-q10VITrVYUM-unsplash.jpg" alt="computer keyboard" height="200vh" width="300px ">
+                <img src="images/jess-bailey-q10VITrVYUM-unsplash.jpg" alt="computer keyboard" height="200vh" width="300px ">
             </div>
             <h1>The Programs </h1>
             <div class="row pt-3 pb-4">
@@ -109,7 +109,7 @@ if (isset ( $_POST['submitbutton']))
         </div>
         <form class="row"  action="about-us.php" method="POST">
 
-            <div class=" col-auto ">
+            <div class=" col-6 ">
                 <input type="email" name="emailaddress" class="form-control" placeholder="Your email address" >
             </div>
             <div class=" col-auto mb-5">
