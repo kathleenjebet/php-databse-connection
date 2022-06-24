@@ -19,7 +19,7 @@
                 <div class="navbar-nav">
                     <a href="home.html" class="nav-link active">Home</a>
                     <a href="about us.html" class="nav-link">About Us  </a>
-                    <a href="#" class="nav-link">Contact Us</a>
+                    <a href="enroll.php" class="nav-link btn btn-primary">Register now</a>
                     <a href="#" class="nav-link">Location</a>
                 </div>
             </div>
@@ -53,7 +53,7 @@
         </div>
         <!-- contact us starts here -->
         <div class="row pt-5">
-            <h1>Contact Us</h1>
+            <h1>Register now</h1>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, illo error rerum quibusdam ea delectus corporis repudiandae tempora ratione suscipit, quisquam quod iure debitis aliquam laborum hic alias, esse architecto.
             </p>
