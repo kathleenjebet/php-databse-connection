@@ -1,3 +1,30 @@
+<?php
+$server ="localhost";
+$username ="root";
+$password ="";
+$database ="web2";
+
+$conn =mysqli_connect($server,$username,$password,$database);
+if (isset ( $_POST['submitbutton']))
+{     
+      $fullname=$_POST['fullname'];
+      $phonenumber=$_POST['phonenumber'];
+      $emailaddress=$_POST['emailaddress'];
+      $gender=$_POST['gender'];
+      $course=$_POST['course'];
+
+    $insertData =mysqli_query($conn, "INSERT INTO enrollment(fullname,phonenumber,emailaddress,gender,course)VALUES('$fullname','$phonenumber','$emailaddress','$gender','$course')");
+    if($insertData){
+        echo "Data submitted successfuly";
+    }
+    else
+     {
+        echo "Connection failed" .mysqli_error($conn);
+     }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +34,11 @@
     <title>enroll</title>
     <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="index.php">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 </head>
 <body>
     
-   <nav class="navbar navbar-expand-lg bg-light fixed-top-shadow">
+   <!-- <nav class="navbar navbar-expand-lg bg-light fixed-top-shadow">
       <div class="container-fluid">
          <a href="#" class="navbar-brand">Zalego Academy</a>
            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#menus">
@@ -28,13 +56,13 @@
             </div>
          </div>
       </div>
-  </nav>
+  </nav> -->
   <main class="p-5 bg-light  text-dark mb-2 ">
         <h1>JULY SOFTWARE ENGINEERING BOOTCAMP</h1>
-        span><i class="fa fa-calendar-check-o fa-3x"></i></span>
-					<span class="float-centre">00</span>
-          span><i class="fa fa-map-marker fa-3x"></i></span>
-					<span class="float-centre">00</span>
+        <span><i class="fa fa-calendar-check-o fa-3x"></i></span>
+					<span class="float-centre">20th July 2022</span> <br>
+          <span><i class="fa fa-map-marker fa-3x"></i></span>
+					<span class="float-centre">Zalego Academy, <br>Devan plaza</span>
        
   </main>
   <div class="container">
@@ -48,43 +76,41 @@
         
     </div>
   </div>
-  <form >
+  <div class="container br-2">
+  <form action="enroll.php" method="POST" >
     <div class="row"> 
       <div class="mb-3 col-lg-6 ">
            <label for="fullname" class="form-label">Full name:</label>
-           <input type="text" class="form-control" placeholder="Enter your full name" >
+           <input type="text"  name="fullname" class="form-control" placeholder="Enter your full name" >
        </div>
        <div class="mb-3 col-lg-6">
            <label for="phonenumber" class="form-label">Phone Number:</label>
-           <input type="tel" class="form-control" placeholder="Enter your second name" >
+           <input type="tel" name="phonenumber" class="form-control" placeholder="Enter your phonenumber" >
        </div>    
    </div>
    <div class="row"> 
        <div class="mb-3 col-lg-6 ">
            <label for="emailaddress" class="form-label">Email Address:</label>
-           <input type="email" class="form-control" placeholder="Please enter your email" >
+           <input type="email"  name="emailaddress"class="form-control" placeholder="Please enter your email" >
        </div>
        <div class="mb-3 col-lg-6">
-           <label for="gender" class="form-label">Whats your gender?</label>
-           <select class="form-select">
-            <option selected > --select your gender--</option>
-            <option value="1">Male</option>
-            <option value="2">Female</option>
-            <option value="3">Transgender</option>
+           <label for="gender"  name="gender"class="form-label">Whats your gender?</label>
+           <select class="form-select" name="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
            </select>
       
        </div>
        <div class="lg-12">
-        <p>in oder to complrte your registraation in the bootcamp you are required to select one course undertaking.Plese NOTE that will be your learning track during the 2-week immersion</p>
+        <p>in oder to complete your registraation in the bootcamp you are required to select one course undertaking.Plese NOTE that will be your learning track during the 2-week immersion</p>
        </div>
        <div class="mb-3 col-lg-6 ">
            <label for="courses" class="form-label">Whats your prefferd course?</label>
-           <select class="form-select">
-            <option selected > --select your course--</option>
-            <option value="1">Androiod App Development</option>
-            <option value="2">Web Design and Delopment</option>
-            <option value="3">Data Analysis</option>
-            <option value="4">Cyber Security</option>
+           <select class="form-select" name="course">
+            <option value="Androiod App Development">Androiod App Development</option>
+            <option value="Web Design and Delopment">Web Design and Delopmen</option>
+            <option value="Data Analysis">Data Analysis</option>
+            <option value="Cyber Security">Cyber Security</option>
            </select>
        </div>
        <div class="lg-12">
@@ -92,22 +118,26 @@
           You agree by providing your information ypu understand all our data privacy and protection policy outlined in our Terms &conditions and the privacy policy stament.
         </p>
        </div>
-        <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="dropdownCheck">
+        <div class="form-check" >
+        <input type="checkbox"  class="form-check-input" id="dropdownCheck">
         <label class="form-check-label" for="dropdownCheck">
-          Agree to terms and conditions
+         <p>
+         Agree to terms and conditions
+         </p>
         </label>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">submit application</button>
+
+    <button type="submit" name="submitbutton" class="btn btn-primary">submit application</button>
 
   </form>
+  </div>
 <div class="row">
- <div class=" col-6  mb-5">
-       <input type="email" name="emailaddress" class="form-control" placeholder="Your email address" >
+ <div class=" col-auto pl-5  text-centre mb-5 mr-5-2">
+       <input type="email" name="emailaddress1" class="form-control" placeholder="Your email address" >
             </div>
             <div class=" col-auto mb-5">
-     <button type="submit" name="submitbutton" class="btn btn-primary">Subscribe</button> 
+     <button type="submit" name="submitbutton1" class="btn btn-primary">Subscribe</button> 
   </div>
 </div>
 <hr>
@@ -117,7 +147,8 @@
   
     
      
-
+<script src="/bootstrap-5.2.0-beta1-dist/js/bootstrap.min.js"></script>  
+  <script src="/bootstrap-5.2.0-beta1-dist/js/bootstrap.bundle.min.js"></script>
     
 </body>
 </html>
