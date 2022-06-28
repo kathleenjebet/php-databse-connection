@@ -34,7 +34,7 @@ if (isset ( $_POST['submitbutton']))
     <link rel="stylesheet" href="index.html">
 </head>
 <body>
-    <!-- <nav class="navbar navbar-expand-lg bg-light fixed-top-shadow">
+    <nav class="navbar navbar-expand-lg bg-light fixed-top-shadow">
     <div class="container-fluid">
         <a href="#" class="navbar-brand">Zalego Academy</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#menus">
@@ -46,12 +46,12 @@ if (isset ( $_POST['submitbutton']))
                 <a href="index.html" class="nav-link">About Us
                     
                 </a>
-                <a href="#" class="nav-link">Contact Us</a>
+                <a href="#" class="nav-link">Register now</a>
                 <a href="#" class="nav-link">Location</a>
             </div>
         </div>
     </div>
-</nav> -->
+</nav>
 
     <main class="p-5 bg-light text-dark">
         <h1>About Us</h1>
@@ -108,6 +108,7 @@ if (isset ( $_POST['submitbutton']))
                 Subscribe to get information latest news about <br> Zalego Academy </h6> </p>
         </div>
         <form class="row"  action="about-us.php" method="POST">
+
 
             <div class=" col-6 ">
                 <input type="email" name="emailaddress" class="form-control" placeholder="Your email address" >

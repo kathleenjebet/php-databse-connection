@@ -35,10 +35,11 @@ if (isset ( $_POST['submitbutton']))
     <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="index.php">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
-   <!-- <nav class="navbar navbar-expand-lg bg-light fixed-top-shadow">
+   <nav class="navbar navbar-expand-lg bg-light fixed-top-shadow">
       <div class="container-fluid">
          <a href="#" class="navbar-brand">Zalego Academy</a>
            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#menus">
@@ -50,13 +51,13 @@ if (isset ( $_POST['submitbutton']))
                  <a href="index.html" class="nav-link">About Us
                     
                  </a>
-                 <a href="#" class="nav-link">Contact Us</a>
+                 <a href="#" class="nav-link text-white btn btn-primary ">Register Now</a>
                  <a href="#" class="nav-link">Location</a>
                 </div>
             </div>
          </div>
       </div>
-  </nav> -->
+  </nav>
   <main class="p-5 bg-light  text-dark mb-2 ">
         <h1>JULY SOFTWARE ENGINEERING BOOTCAMP</h1>
         <span><i class="fa fa-calendar-check-o fa-3x"></i></span>
@@ -65,21 +66,23 @@ if (isset ( $_POST['submitbutton']))
 					<span class="float-centre">Zalego Academy, <br>Devan plaza</span>
        
   </main>
-  <div class="container">
+  <div class="container ">
     <div class="row">
       <div class="col-lg-12 pt-5 pb-2">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam possimus adipisci error! Iure amet, tempore, nobis natus accusamus consequatur ex a cumque accusantium at esse odio odit, consectetur deleniti sunt atque!
         </p>
-        <h1>Sign up today?</h1>
+        
       </div>
         
     </div>
   </div>
-  <div class="container br-2">
+  <div class="container shadow p-3 mb-5 bg-white rounded   ">
   <form action="enroll.php" method="POST" >
+  <h1 class="text-centre text-primary">Sign up today?</h1>
     <div class="row"> 
       <div class="mb-3 col-lg-6 ">
+      
            <label for="fullname" class="form-label">Full name:</label>
            <input type="text"  name="fullname" class="form-control" placeholder="Enter your full name" >
        </div>
@@ -94,8 +97,9 @@ if (isset ( $_POST['submitbutton']))
            <input type="email"  name="emailaddress"class="form-control" placeholder="Please enter your email" >
        </div>
        <div class="mb-3 col-lg-6">
-           <label for="gender"  name="gender"class="form-label">Whats your gender?</label>
-           <select class="form-select" name="gender">
+           <label for="gender"   name="gender"class="form-label">Whats your gender?</label>
+           <select class="form-select" name="gender" >
+            <option disabled>--select your gender--</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
            </select>
@@ -107,8 +111,9 @@ if (isset ( $_POST['submitbutton']))
        <div class="mb-3 col-lg-6 ">
            <label for="courses" class="form-label">Whats your prefferd course?</label>
            <select class="form-select" name="course">
-            <option value="Androiod App Development">Androiod App Development</option>
-            <option value="Web Design and Delopment">Web Design and Delopmen</option>
+            <option disabled>--select your course--</option>
+            <option value="Androiod App Development">Andriod App Development</option>
+            <option value="Web Design and Delopment">Web Design and Delvopmen</option>
             <option value="Data Analysis">Data Analysis</option>
             <option value="Cyber Security">Cyber Security</option>
            </select>
@@ -131,20 +136,31 @@ if (isset ( $_POST['submitbutton']))
     <button type="submit" name="submitbutton" class="btn btn-primary">submit application</button>
 
   </form>
+  
+ 
   </div>
-<div class="row">
- <div class=" col-auto pl-5  text-centre mb-5 mr-5-2">
+  <form class="row"  action="about-us.php" method="POST">
+  <div class="container text-centre">
+    <div class="row">
+     <div class="text-center">
+       <p>Subscribe to get information latest news about <br>Zalego Academy </p> 
+      </div>
+      <div class="mb-3 col-lg-6">
        <input type="email" name="emailaddress1" class="form-control" placeholder="Your email address" >
-            </div>
-            <div class=" col-auto mb-5">
-     <button type="submit" name="submitbutton1" class="btn btn-primary">Subscribe</button> 
+      </div>
+      <div class="mb-3 col-lg-6">
+       <button type="submit" name="submitbutton1" class="btn btn-primary">Subscribe</button> 
+    </div>
   </div>
-</div>
-<hr>
+  </form >
+              
+ </div>
+
+ <hr>
 <footer>
  &copy;Zalego Academy2022
 </footer>
-  
+</div>  
     
      
 <script src="/bootstrap-5.2.0-beta1-dist/js/bootstrap.min.js"></script>  
